@@ -44,13 +44,15 @@
             }
             function onCaptureSuccess(fileList) {
                 var i, len, htmlStr;
-                len = fileList.length;
+                len = mediaFiles.length;
                 //Make sure we had a result; it should always be
                 //greater than 0, but you never know.
                 if(len > 0) {
                     htmlStr = "<p>Resultados:</p><ol>";
     for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-        htmlStr = mediaFiles[i].fullPath;
+        htmlStr += '<li><a href="file:/' +
+mediaFiles[i].fullPath + '">' + mediaFiles[i].name +
+'</a></li>';
         // do something interesting with the file
     }
                 htmlStr += "</ol>";
