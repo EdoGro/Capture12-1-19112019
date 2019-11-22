@@ -49,12 +49,10 @@
                 //greater than 0, but you never know.
                 if(len > 0) {
                     htmlStr = "<p>Resultados:</p><ol>";
-                    for( i = 0, len; i < len; i += 1) {
-                        //alert(fileList[i].fullPath);
-                        htmlStr += '<li><a href="/' +
-fileList[i].fullPath + '">' + fileList[i].fullPath +
-'</a></li>';
-                    }
+    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+        htmlStr = mediaFiles[i].fullPath;
+        // do something interesting with the file
+    }
                 htmlStr += "</ol>";
                 //Set the results content
                 res.innerHTML = htmlStr;
